@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Altın Sinema</title>
+    <!-- CSS Stil Dosyasına Bağlantı -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+    
+</head>
+<body>
+
+    
+    <!-- Ana Sayfa Başlığı -->
+    <header>
+        <div class="logo">
+            <h1>Altın<span style="color: #FFD700;">Sinema</span></h1>
+        </div>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#">Ana Sayfa</a></li>
+                <li><a href="#">Hakkımızda</a></li>
+                <li><a href="#">Hizmetler</a></li>
+                <li><a href="#">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Ana İçerik Alanı -->
+     <div class="video">
+        <iframe class="movieframe"  src="https://ok.ru/videoembed/8567399909969" 
+        frameborder="0" allow="autoplay" allowfullscreen></iframe>
+    <!-- Alt Bilgi -->
+    </div>
+    <footer>
+        <p>&copy; 2024 Muhammet Ali Mutlu. Tüm Hakları Saklıdır.</p>
+        <ul>
+            <li><a href="#">Gizlilik Politikası</a></li>
+            <li><a href="#">Kullanım Şartları</a></li>
+        </ul>
+    </footer>
+
+ 
+</body>
+</html>
