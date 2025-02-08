@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const movieTitle = urlParams.get("id"); // 'id' contains the movie title
 
 // Fetch movies JSON
-fetch("movies.json")
+fetch("https://raw.githubusercontent.com/mutlu-java/movies-data/main/movies.json")
     .then(response => response.json())
     .then(movies => {
         const movieData = movies.find(m => m.title === movieTitle);
