@@ -1,6 +1,6 @@
 
 
-function Movie(title, originalTitle, imdbScore, releaseYear, description, categories, directors, screenwriters, actors, countries, productionCompanies, poster_url) {
+function Movie(title, originalTitle, imdbScore, releaseYear, description, categories, directors, screenwriters, actors, countries, productionCompanies, poster_url,iframe_url) {
     this.title = title || "Unknown Title";
     this.originalTitle = originalTitle || "Unknown Original Title";
     this.imdbScore = imdbScore || "N/A";
@@ -13,6 +13,7 @@ function Movie(title, originalTitle, imdbScore, releaseYear, description, catego
     this.countries = countries || "Unknown Country";
     this.productionCompanies = productionCompanies || "Unknown Production Company";
     this.posterUrl = poster_url || "https://image.tmdb.org/t/p/w500/q125RHUDgR4gjwh1QkfYuJLYkL.jpg";
+    this.iframe_url = iframe_url ;
 }
 
 
@@ -129,7 +130,7 @@ function fetchMovies() {
                 movie.title, movie.original_title, movie.imdb_score, 
                 movie.release_year, movie.description, movie.categories, 
                 movie.directors, movie.screenwriters, movie.actors, 
-                movie.countries, movie.production_companies, movie.poster_url
+                movie.countries, movie.production_companies, movie.poster_url, movie.iframe_url
             ));
             displayMoviePosters();
             updatePagination();

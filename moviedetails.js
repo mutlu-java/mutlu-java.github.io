@@ -23,7 +23,8 @@ fetch("movies.json")
                 movieData.actors,
                 movieData.countries,
                 movieData.production_companies,
-                movieData.poster_url
+                movieData.poster_url,
+                movieData.iframe_url
             );
 
             // Populate the HTML
@@ -41,7 +42,7 @@ fetch("movies.json")
             document.getElementById("productionCompanies").textContent = movie.productionCompanies;
 
             // Set an example trailer (if available, otherwise default)
-            document.getElementById("movieTrailer").src = movie.trailerUrl || "https://youtu.be/2EpdtPDSlu4";
+            document.getElementById("movieTrailer").src = movie.iframe_url || "https://www.youtube.com/embed/q1T8tGb_A1M";
         } else {
             document.body.innerHTML = "<h2>Movie not found</h2>";
         }

@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Details</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mopelements.css">
 </head>
+
 <body>
+    <header>
+
+        <a href="index.html">
+            <h1><span style="color: #f5a700;">Altin</span><span>Sinema</span></h1>
+        </a>
+        <div class="search-bar">
+            <input type="text" placeholder="Ara...">
+            <button><img class="search-icon" src="searchicon.png" alt=""></button>
+        </div>
+
+        <div class="user-menu">
+            <a href="#">Login</a> | <a href="#">Sign Up</a>
+        </div>
+
+    </header>
+
     <div class="movie-details">
-        <img id="moviePoster" alt="Movie Poster">
+
         <h1 id="movieTitle"></h1>
         <h3 id="originalTitle"></h3>
+
+        <iframe id="movieTrailer" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+
         <p id="movieDescription"></p>
+        <img id="moviePoster" alt="Movie Poster">
         <p><strong>IMDB Score:</strong> <span id="imdbScore"></span></p>
         <p><strong>Release Year:</strong> <span id="releaseYear"></span></p>
         <p><strong>Categories:</strong> <span id="categories"></span></p>
@@ -20,13 +43,19 @@
         <p><strong>Actors:</strong> <span id="actors"></span></p>
         <p><strong>Countries:</strong> <span id="countries"></span></p>
         <p><strong>Production Companies:</strong> <span id="productionCompanies"></span></p>
-        <iframe id="movieTrailer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+
     </div>
-    
+    <footer>
+        <p>&copy; Altin Sinema. Tüm Hakları Saklıdır.</p>
+        <ul>
+            <li style="list-style-type: none;"><a href="#">Gizlilik Politikası</a></li>
+            <li style="list-style-type: none;"><a href="#">Kullanım Şartları</a></li>
+        </ul>
+    </footer>
 
     <script src="moviedetails.js"></script>
-    <script src="moviepage.js"></script>
+
     <script src="deneme.js"></script>
-    
 </body>
+
 </html>
