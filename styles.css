@@ -1,26 +1,52 @@
+:root {
+    --primary-color: #222731;
+    --main-body-color:#1E2129;
+    --secondary-color:#171A21 ;
+    --light:#2D3039;
+    --text-color: #f5a700;
+    --background-color: #191B22;
+    --footer-color:#1A1C23;
+  }
+  
 * {
  box-sizing: border-box;
+ margin:0%;
+ padding: 0%;
+
+
 }
-
-
 
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #400d3b, #ff5400);
+    background: linear-gradient(to bottom, #15024e, #fe0000c4);
     color: white;
-    margin: 0;
-    padding: 0;
-    bottom:0;
-    background-repeat:repeat-x;
+    
+    
+    max-width: 1000px;
+
+ /*   background-repeat:repeat-x;*/
     background-attachment: fixed;
-    min-height: 100vh;
+    
+    min-height :100vh;
+    margin: auto;
+    padding: 0;
+    
 }
 
+
 header {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
+  
+    display: flex;
+    justify-content: space-between;
+
+    padding: 15px 0px 15px 0px;
+    
+    background-color: var(--primary-color);
+    overflow: visible;
+}
+header h1{
+    margin-left: 10px;
 }
 
 a{
@@ -28,8 +54,16 @@ a{
     text-decoration: dashed;
 }
 nav {
-    background-color: #222;
-    padding: 10px;
+   
+    background-color: var(--secondary-color);
+    
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+
+    
 }
 
 nav ul {
@@ -37,32 +71,48 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 0px;
+    /* background-color: #222; */
 }
 
-nav ul li a {
+
+nav a {
+    display: block;
+    padding: 15px 16px;
     color: white;
     text-decoration: none;
 }
 
   
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
+nav a:hover {
+   color: var(--text-color);  }
   
+.container{
+  display: grid;
+  grid-template-columns: 3fr 1.5fr; /* Main content (movie grid) takes 3 fractions, sidebar takes 1.5 */
+  gap: 20px; /* Space between grid and sidebar */
+  padding: 20px;
 
+  margin: 0 auto;
+  background-color: #1E2129;
+}
 .movie-list {
+    background-color: #1E2129;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
     gap: 20px;
     padding: 20px;
-    margin:20px 100px;
+    
+}
+#pmovietitle{
+    font-size:14px;
 }
 
 .movie-item {
+  
     text-align: center;
-    background-color: #111111;
-    padding: 10px;
+   /* background-color: ;*/
+    padding: 1px;
     border-radius: 8px;
 }
 
@@ -73,164 +123,347 @@ nav ul li a {
 }
 
 .movie-item img:hover {
-    transform: scale(1.05);
+
+    transform: scale(1.1);
 }
 
 .movie-item p {
-    margin-top: 10px;
+    color: #ccc;
+    margin-top: 0px;
     font-size: 1rem;
 }
-.search-bar {
+
+
+
+.kategori-sidebar {
+    
+    padding: 5px;
+    background-color:var(--main-body-color); /* Background for the sidebar */
+    color: white;
+    border-radius: 8px;
+}
+
+.kategori-sidebar h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-left: 3px solid #ffcc00; /* Yellow left border like the image */
+    padding-left: 10px;
+}
+
+.button-group {
+    margin-bottom: 15px;
+}
+
+.button-group button {
+    background-color: #ffcc00; /* Film button yellow background */
+    border: none;
+    padding: 8px 16px;
+    margin-right: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.button-group .dizi-button {
+    background-color: #333; /* Dizi button dark background */
+    color: white;
+}
+
+.button-group button:hover {
+    background-color: #e6b800;
+}
+
+.category-list {
+  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 5px; /* Space between items */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove bullet points */
+
+    /*align-items: stretch; /* Ensure that all items have the same height */
+ /*   justify-items: stretch; /* Ensure that all items have the same width */
+}
+
+.category-list li {
+    
+    background-color: var(--light);
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
     display: flex;
-    justify-content: center;
-    padding: 10px;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    min-height: 15px; /* Ensures all boxes have the same height */
+
+}
+
+.category-list li:hover {
+    background-color: #555; /* Hover effect for categories */
+}
+
+
+
+.search-bar {
+  position: relative; 
+  display: flex;
+  justify-content: center;
+  
+  background-color: #dce1eb; /* Açık gri-mavi ton */
+  border-radius: 25px; /* Yuvarlatılmış köşeler */
+  padding: 5px 15px;
+  min-width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  overflow: visible;
+    
 }
 
 .search-bar input {
+    background: transparent;
     padding: 10px;
-    width: 300px;
-    border: none;
     border-radius: 5px;
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #333;
 }
 
 .search-bar button {
-    padding: 10px 20px;
-    background-color: #ff5400;
+
     border: none;
-    border-radius: 5px;
-    color: white;
-    margin-left: 10px;
+    background: none;
     cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search-icon{
+    height: 1.3rem;
+}
+.search-bar button svg {
+    color: #555;
+    font-size: 20px;
+}
+.search-bar button svg:hover {
+    color: black;
+    
 }
 
-.search-bar button:hover {
-    background-color: #e04000;
+.search-results {
+    position : absolute;
+    top:100%;
+    background-color:var(--footer-color);
+    display: block;
+    overflow: auto;
+    
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    
 }
+
+
+
 
 
 
 
 .pagination {
-    text-align: center;
-    margin: 30px 0;
-    
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
 }
 
-.pagination a {
-    margin: 0 10px;
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #222;
-    color: white;
-    text-decoration: none;
+.pagination button {
+    padding: 5px 10px;
+    border: none;
+    background: #333;
+    color: hsla(0, 0%, 100%, 0.801);
+    cursor: pointer;
     border-radius: 5px;
 }
 
-.pagination a:hover {
-    background-color: #ff5400;
+.pagination .active {
+    background: #ddd;
+    color: black;
 }
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
 .user-menu {
     float: right;
     margin-right: 20px;
+       
 }
 
 .user-menu a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
+        display: inline-block;
+        
+    
 }
 
 .user-menu a:hover {
-    color: #ff5400;
+    color: #f1c40f;
 }
 
 footer {
-    background-color: #333;
+    display: block;
+    justify-content: flex-end;
+    gap: 10px;
+    background-color: var(--footer-color);
     color: #888;
     font-size: 14px;
     padding: 15px;
+    text-align: right;
   }
   footer a {
     color: #ccc;
     text-decoration: none;
   }
   
-  footer a:hover {
-    text-decoration: underline;
-  }
   
   .video { 
     width: 100%; /* Videoyu tam genişlikte yapar */
-    max-width: 720px; /* Maksimum genişliği belirler */
+   /* max-width: 720px; /* Maksimum genişliği belirler */
     display: block;
-    margin: 20px auto; /* Ortalar */
+    margin:  auto; /* Ortalar */
+    height: auto;
+    margin: 0px;
 }
 
 .movieframe {
     width: 100%;
     height: auto;
-    aspect-ratio: 16/9; /* Videonun oranını korur */
+    aspect-ratio: 8/3.5; /* Videonun oranını korur */
 }
-/* 
+ /*
 Ekran genişliği 600px veya daha küçük olduğunda stil kuralları */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+    .video { 
+        width: 100%; /* Videoyu tam genişlikte yapar */
+       /* max-width: 720px; /* Maksimum genişliği belirler */
+        display: block;
+        margin:  auto; /* Ortalar */
+        height: auto;
+        margin: 0px;
+    }
+
     .movie-list {
         margin: 20px; /* Kenar boşluklarını küçült */
-        grid-template-columns: 1fr; /* Tek sütun düzeni */
+        grid-template-columns: repeat(3,1fr); /* Tek sütun düzeni */
     }
 
     .movie-item {
         padding: 5px; /* Paddingi küçült */
     }
-
-    .search-bar input {
-        width: calc(100% - 110px); /* Arama çubuğunu ekran genişliğine göre ayarla */
+   
+   
+    header {
+        
+        display: flex;
+        justify-content: space-around;
+    
+        padding: 15px 0px 15px 0px;
+        
+        background-color: var(--primary-color);
+        overflow: visible;
     }
+   
 
-    .search-bar button {
-        width: 100px; /* Düğme genişliğini küçült */
+    nav{
+        display:none;
     }
-
-    .sidebar {
-        width: 100%; /* Yan menüyü ekran genişliğine göre ayarla */
-        position: static; /* Yan menüyü normal akışa al */
-        height: auto; /* Yüksekliği otomatik ayarla */
+    .container{
+        
+        grid-template-columns: 1fr;
     }
-
+    .movie-list{
+        gap: 5px;
+    }
+    .kategori-sidebar{
+        display: none;
+    }
     .user-menu {
-        float: none; /* Float özelliğini kaldır */
-        text-align: center; /* Menü öğelerini ortala */
+        display : none;
     }
-
-    .user-menu a {
-        display: block; /* Menü öğelerini blok olarak göster */
-        margin: 10px 0; /* Marginleri dikey olarak ayarla */
+ 
+    header h1{
+        font-size: 20px;
     }
+    
+    
+  
+.search-bar {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    
+    background-color: #dce1eb; /* Açık gri-mavi ton */
+    border-radius: 25px; /* Yuvarlatılmış köşeler */
+    padding: 2px 10px;
+    min-width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    overflow: visible;
+      
+  }
+  
+  .search-bar input {
+      background: transparent;
+      padding: 2px;
+      border-radius: 5px;
+      flex: 1;
+      border: none;
+      background: transparent;
+      outline: none;
+      color: #333;
+  }
+  
+  .search-bar button {
+  
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .search-bar button svg {
+      color: #555;
+      font-size: 20px;
+  }
+  .search-bar button svg:hover {
+      color: black;
+      
+  }
+  
+  .search-results {
+      position : absolute;
+      top:100%;
+      background-color:var(--footer-color);
+      display: block;
+      overflow: auto;
+      
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      
+  }
 }
-
-/* Ekran genişliği 768px veya daha küçük olduğunda stil kuralları */
-@media (max-width: 768px) {
-    .movie-list {
-        margin: 20px; /* Kenar boşluklarını küçült */
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dört sütun düzeni */
-    }
-
-    .movie-item img {
-        max-width: 100%; /* Resimlerin genişliğini sınırlama */
-    }
-
-    .search-bar {
-        flex-direction: column; /* Arama çubuğunu dikey olarak hizala */
-        align-items: center; /* Merkezi hizala */
-    }
-
-    .search-bar input {
-        width: 100%; /* Arama çubuğu genişliğini ekran genişliğine göre ayarla */
-        margin-bottom: 10px; /* Arama çubuğu ve düğme arasına boşluk ekle */
-    }
-
-    .search-bar button {
-        width: 100%; /* Düğme genişliğini ekran genişliğine göre ayarla */
-    }
-} 
-

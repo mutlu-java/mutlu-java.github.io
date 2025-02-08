@@ -1,63 +1,31 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>Altın Sinema</title>
-    <!-- CSS Stil Dosyasına Bağlantı -->
+    <title>Movie Details</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navMenu = document.querySelector('.nav-menu');
-    
-        mobileMenu.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    </script>
-    
 </head>
 <body>
-
-    
-    <!-- Ana Sayfa Başlığı -->
-    <header>
-        <div class="logo">
-            <h1>Altın<span style="color: #FFD700;">Sinema</span></h1>
-        </div>
-        
-        <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#">Ana Sayfa</a></li>
-                <li><a href="#">Hakkımızda</a></li>
-                <li><a href="#">Hizmetler</a></li>
-                <li><a href="#">İletişim</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Ana İçerik Alanı -->
-     <div class="video">
-        <iframe class="movieframe"  src="https://ok.ru/videoembed/8567399909969" 
-        frameborder="0" allow="autoplay" allowfullscreen></iframe>
-    <!-- Alt Bilgi -->
+    <div class="movie-details">
+        <img id="moviePoster" alt="Movie Poster">
+        <h1 id="movieTitle"></h1>
+        <h3 id="originalTitle"></h3>
+        <p id="movieDescription"></p>
+        <p><strong>IMDB Score:</strong> <span id="imdbScore"></span></p>
+        <p><strong>Release Year:</strong> <span id="releaseYear"></span></p>
+        <p><strong>Categories:</strong> <span id="categories"></span></p>
+        <p><strong>Directors:</strong> <span id="directors"></span></p>
+        <p><strong>Screenwriters:</strong> <span id="screenwriters"></span></p>
+        <p><strong>Actors:</strong> <span id="actors"></span></p>
+        <p><strong>Countries:</strong> <span id="countries"></span></p>
+        <p><strong>Production Companies:</strong> <span id="productionCompanies"></span></p>
+        <iframe id="movieTrailer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
     </div>
-    <footer>
-        <p>&copy; 2024 Muhammet Ali Mutlu. Tüm Hakları Saklıdır.</p>
-        <ul>
-            <li><a href="#">Gizlilik Politikası</a></li>
-            <li><a href="#">Kullanım Şartları</a></li>
-        </ul>
-    </footer>
+    
 
- 
+    <script src="moviedetails.js"></script>
+    <script src="moviepage.js"></script>
+    
 </body>
 </html>
