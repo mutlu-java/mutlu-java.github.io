@@ -122,7 +122,7 @@ function displayMoviePosters() {
 
 // Fetch and display movies
 function fetchMovies() {
-    fetch("https://raw.githubusercontent.com/mutlu-java/movies-data/main/movies.json")
+    fetch("https://api.jsonbin.io/v3/qs/67a72e83ad19ca34f8fc082d")
         .then(response => response.json())
         .then(data => {
             movies = data.map(movie => new Movie(
