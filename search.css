@@ -1,0 +1,86 @@
+:root {
+    --primary-color: #222731;
+    --main-body-color:#1E2129;
+    --secondary-color:#171A21 ;
+    --light:#2D3039;
+    --text-color: #f5a700;
+    --background-color: #191B22;
+    --footer-color:#1A1C23;
+  }
+  
+
+
+
+.search-bar {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #dce1eb; /* Açık gri-mavi ton */
+    border-radius: 25px; /* Yuvarlatılmış köşeler */
+    padding: 5px 15px;
+    min-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    overflow: visible;
+      
+  }
+  
+  .search-bar input {
+      background: transparent;
+      padding: 10px;
+      border-radius: 5px;
+      flex: 1;
+      border: none;
+      background: #DCE1EB;
+      outline: none;
+      color: #333;
+  }
+  
+  .search-bar button {
+  
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .search-icon{
+      height: 1.3rem;
+  }
+  .search-bar button svg {
+      color: #555;
+      font-size: 20px;
+  }
+  .search-bar button svg:hover {
+      color: black;
+      
+  }
+
+#results {
+    position: absolute;
+    top:101%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
+    z-index: 1000;
+}
+
+.movie-card {
+    display: flex;
+    background-color: var(--footer-color);
+    
+    padding:2px;
+    width: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.movie-card a {
+    margin-bottom: 2.5rem;
+}
+

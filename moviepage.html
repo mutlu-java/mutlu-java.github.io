@@ -7,6 +7,8 @@
     <title>Movie Details</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="mopelements.css">
+    <link rel="stylesheet" href="search.css">
+    
 </head>
 
 <body>
@@ -16,35 +18,56 @@
             <h1><span style="color: #f5a700;">Altin</span><span>Sinema</span></h1>
         </a>
         <div class="search-bar">
-            <input type="text" placeholder="Ara...">
-            <button><img class="search-icon" src="searchicon.png" alt=""></button>
-        </div>
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton"><img class="search-icon" src="searchicon.png" alt="Search"></button>
+       
+            <div id="results"></div>
+        </div> 
 
         <div class="user-menu">
             <a href="#">Login</a> | <a href="#">Sign Up</a>
         </div>
 
     </header>
+    <iframe id="iframe_url" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 
-    <div class="movie-details">
+    <div class="movie-container">
+        <div class="image-section">
+            <img id="poster_url" src=""  alt="Movie Poster">
+            
+            <!-- <button class="add-button" id="addButton">+ Ekle</button> -->
+        </div> 
+    
+        <div class="details-section">
+            <div class="movie-header">
+                <span class="imdb_score" id="imdb_score">7.4</span>
+                <h2 id="title" > </h2>
+            </div>
+            <p class="movie-meta">
+                <span class="soluk">Year:</span> <span id="release_year">2000</span> &nbsp; 
+                <span class="soluk">Country:</span> <span id="countries"></span> &nbsp; 
+                <!-- <span class="soluk">Film Süresi:</span> <span id="movieDuration">113 dakika</span> -->
+            </p>
+    
+            <div class="category-tags" >
+                <span id="categories"></span> 
+            </div>
+    
+            <div class="movie-info">
+                <p><span class="soluk">Director:</span> <span id="directors"></span></p>
+                <p><span class="soluk">Scenario:</span> <span id="screenwriters"></span></p>
+                <p><span class="soluk">Actors:</span> <span id="actors"></span></p>
+                <p><strong class="soluk">Production:</strong> <span id="production_companies"></span></p>
 
-        <h1 id="movieTitle"></h1>
-        <h3 id="originalTitle"></h3>
-
-        <iframe id="movieTrailer" src="" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-
-        <p id="movieDescription"></p>
-        <img id="moviePoster" alt="Movie Poster">
-        <p><strong>IMDB Score:</strong> <span id="imdbScore"></span></p>
-        <p><strong>Release Year:</strong> <span id="releaseYear"></span></p>
-        <p><strong>Categories:</strong> <span id="categories"></span></p>
-        <p><strong>Directors:</strong> <span id="directors"></span></p>
-        <p><strong>Screenwriters:</strong> <span id="screenwriters"></span></p>
-        <p><strong>Actors:</strong> <span id="actors"></span></p>
-        <p><strong>Countries:</strong> <span id="countries"></span></p>
-        <p><strong>Production Companies:</strong> <span id="productionCompanies"></span></p>
-
+            </div>
+    
+            <p class="description" id="description">
+               
+        </div>
     </div>
+   
+
+
     <footer>
         <p>&copy; Altin Sinema. Tüm Hakları Saklıdır.</p>
         <ul>
@@ -52,9 +75,9 @@
             <li style="list-style-type: none;"><a href="#">Kullanım Şartları</a></li>
         </ul>
     </footer>
-
+    
     <script src="moviedetails.js"></script>
-
+    <script src="search.js"></script>
     <script src="deneme.js"></script>
 </body>
 

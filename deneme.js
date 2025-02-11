@@ -1,18 +1,20 @@
 
 
-function Movie(title, originalTitle, imdbScore, releaseYear, description, categories, directors, screenwriters, actors, countries, productionCompanies, poster_url,iframe_url) {
+function Movie(title, originalTitle, imdb_score, release_year, description, categories,
+     directors, screenwriters, actors, countries, production_companies, poster_url,iframe_url) {
+
     this.title = title || "Unknown Title";
     this.originalTitle = originalTitle || "Unknown Original Title";
-    this.imdbScore = imdbScore || "N/A";
-    this.releaseYear = releaseYear || "Unknown Year";
+    this.imdb_score = imdb_score || "N/A";
+    this.release_year = release_year || "Unknown Year";
     this.description = description || "No description available.";
     this.categories = categories || "Uncategorized";
     this.directors = directors || "Unknown Director";
     this.screenwriters = screenwriters || "Unknown Screenwriter";
     this.actors = actors || "Unknown Cast";
     this.countries = countries || "Unknown Country";
-    this.productionCompanies = productionCompanies || "Unknown Production Company";
-    this.posterUrl = poster_url || "https://image.tmdb.org/t/p/w500/q125RHUDgR4gjwh1QkfYuJLYkL.jpg";
+    this.production_companies = production_companies || "Unknown Production Company";
+    this.poster_url = poster_url || "https://image.tmdb.org/t/p/w500/q125RHUDgR4gjwh1QkfYuJLYkL.jpg";
     this.iframe_url = iframe_url ;
 }
 
@@ -33,7 +35,7 @@ function updatePagination() {
 
     // Create "Previous" button
     const prevButton = document.createElement("button");
-    prevButton.textContent = "« Geri";
+    prevButton.textContent = "« Previous";
     prevButton.disabled = currentPage === 1;
     prevButton.addEventListener("click", () => changePage(currentPage - 1));
     paginationContainer.appendChild(prevButton);
@@ -77,7 +79,7 @@ function updatePagination() {
 
     // Create "Next" button
     const nextButton = document.createElement("button");
-    nextButton.textContent = "İleri »";
+    nextButton.textContent = "Next »";
     nextButton.disabled = currentPage === totalPages;
     nextButton.addEventListener("click", () => changePage(currentPage + 1));
     paginationContainer.appendChild(nextButton);
@@ -104,10 +106,10 @@ function displayMoviePosters() {
         movieItem.classList.add("movie-item");
         
         const movieLink = document.createElement("a");
-        movieLink.href = `moviepage.html?title=${encodeURIComponent(movie.title)}`; // Use title instead of id
+        movieLink.href = `moviepage.html?title=${encodeURIComponent(movie.title)}`; // Use title to 
         
         const movieImage = document.createElement("img");
-        movieImage.src = movie.posterUrl;
+        movieImage.src = movie.poster_url;
         movieImage.alt = movie.title;
         
         const movieTitle = document.createElement("p");

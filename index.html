@@ -7,17 +7,31 @@
     <meta name="keywords" content="sinema, altyazılı filmler">
     <title>Altin Sinema</title>
     <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="search.css">
 </head>
 
 <body>
 
     <header>
-    
-       <a href="index.html"><h1><span style="color: #f5a700;">Altin</span><span >Sinema</span></h1></a> 
-        <div class="search-bar">
-            <input type="text" placeholder="Ara...">
+
+        <a href="index.html">
+            <h1><span style="color: #f5a700;">Altin</span><span>Sinema</span></h1>
+        </a>
+        <!-- <div class="search-bar">
+            <input id="searchInput" type="text" placeholder="Ara...">
             <button><img class="search-icon" src="searchicon.png" alt=""></button>
         </div>
+
+        <div id="results"></div>  -->
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton"><img class="search-icon" src="searchicon.png" alt="Search"></button>
+       
+            <div id="results"></div>
+        </div>
+        
+        <!-- Results will be displayed here -->
 
         <div class="user-menu">
             <a href="#">Login</a> | <a href="#">Sign Up</a>
@@ -32,7 +46,8 @@
             <li><a href="#">2024 Filmleri</a></li>
         </ul>
     </nav>
-
+    
+  
 
     <section class="movie-list">
 
@@ -43,7 +58,7 @@
     <div class="pagination">
 
     </div>
-    
+
 
     <footer>
         <p>&copy; Altin Sinema. Tüm Hakları Saklıdır.</p>
@@ -52,7 +67,7 @@
             <li style="list-style-type: none;"><a href="#">Kullanım Şartları</a></li>
         </ul>
     </footer>
-   
+    <script src="search.js"></script>
     <script src="deneme.js"></script>
 </body>
 
