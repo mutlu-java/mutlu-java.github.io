@@ -1,1 +1,1 @@
-full static
+Js web app
