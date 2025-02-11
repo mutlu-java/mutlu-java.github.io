@@ -20,7 +20,7 @@
     background-color: #dce1eb; /* Açık gri-mavi ton */
     border-radius: 25px; /* Yuvarlatılmış köşeler */
     padding: 5px 15px;
-    min-width: 300px;
+    min-width: 2.2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
     overflow: visible;
       
